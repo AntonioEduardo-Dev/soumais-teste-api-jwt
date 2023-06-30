@@ -21,8 +21,8 @@ class ConsumidorController extends Controller
 
         // Bloco try-catch, para capturar possíveis exceções durante a execução.
         try {
-            $cpf = $request->cpf; // Supondo que o CPF seja enviado como um parâmetro da requisição
-            
+            $cpf = preg_replace('/\D/', '', $request->cpf); // Supondo que o CPF seja enviado como um parâmetro da requisição
+
             // Esta linha busca no banco de dados um registro da tabela Consumidor onde o campo cpf corresponda ao valor armazenado na variável $cpf.
             $consumidor = Consumidor::where('cpf', $cpf)->first();
             
@@ -59,7 +59,7 @@ class ConsumidorController extends Controller
         ]);
 
         // Obter os dados do JSON
-        $cpf = $request->input('cpf'); // De cpf
+        $cpf = preg_replace('/\D/', '', $request->input('cpf')); // De cpf
         $token = $request->input('token'); // De token
 
         // Verificar a autenticação do token JWT
