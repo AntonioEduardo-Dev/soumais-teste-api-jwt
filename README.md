@@ -75,5 +75,20 @@ php artisan jwt:secret
 ## Passo 3: Testando a autenticação JWT
 Agora você pode testar a autenticação JWT da API Laravel clonada do GitHub.
 
+```bash
+php artisan serve
+```
+
+
+## Rotas
+
+```
+MÉTODO   URL                 AÇÃO                 	MIDDLEWARE
+
+[GET]    /                 | Home	                | web
+[POST]   /api/token        | Gerar token		| api
+[GET]    /api/consumers    | Testar token		| api
+```
+
 # Conclusão
 Pronto! Agora você concluiu a instalação e configuração do projeto Laravel 8 API clonado do GitHub com suporte para autenticação JWT.
