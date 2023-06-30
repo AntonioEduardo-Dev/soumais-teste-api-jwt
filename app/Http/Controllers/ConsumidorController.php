@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class ConsumidorController extends Controller
 {
     // Função responsavel por gerar token, para uso da api
-    public function gerarToken(Request $request)
+    public function generateToken(Request $request)
     {
         // Esta linha executa a validação dos campos cpf, ip e dthora presentes no objeto $request.
 		$this->validate($request, [
