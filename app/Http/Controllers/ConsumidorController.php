@@ -75,8 +75,13 @@ class ConsumidorController extends Controller
             // Aqui irei fazer a lógica para obter os consumidores com base no CPF
             $consumidores = Consumidor::where('cpf', $cpf)->get(['nome', 'email', 'endereco']);
 
-            // Retorna uma resposta JSON contendo os dados relevantes do cpf para o consumidor. 
-            return response()->json($consumidores);
+            // Se existir pelo menos um resultado
+            if($consumidores->count() > 0){
+                // Retorna uma resposta JSON contendo os dados relevantes do cpf para o consumidor. 
+                return response()->json($consumidores);
+            }else{
+                return response()->json(['error' => 'Not found'], 404); // Erro 404 Not found
+            }
             
         } catch (\Exception $e) { // Se ocorrer qualquer exceção durante a execução do código dentro do bloco try, é capturado a exceção
             return response()->json(['error' => 'Internal Server Error'], 500); // Erro 500 Internal Server Error
