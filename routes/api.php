@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// rota de criação de token, 
+Route::post('/token', [\App\Http\Controllers\ConsumidorController::class, 'gerarToken']);
+
+// rota para teste de token, com pesquisa por cpf
+Route::middleware(['jwt.verify'])->group(function () {
+    Route::get('/consumers', [\App\Http\Controllers\ConsumidorController::class, 'testApi']);
 });
