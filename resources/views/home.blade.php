@@ -52,6 +52,12 @@
                             <div class="flex items-center">
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="" class="text-gray-900 dark:text-white">Laravel - API</a></div>
                             </div>
+                            <div class="flex items-center">
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{url('api/token')}}" class="text-gray-900 dark:text-white" target="_blank">Rota para gerar o token: /api/token </a></div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{url('api/consumers')}}" class="text-gray-900 dark:text-white" target="_blank">Rota para testar o token: /api/consumers</a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
