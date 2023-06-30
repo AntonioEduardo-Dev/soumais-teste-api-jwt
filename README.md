@@ -46,7 +46,7 @@ cp .env.example .env
 ```
 
 
-Agora configure o arquivo .env com as informações do seu banco de dados. Lembre-se de antes criar uma tabela no seu banco!
+Agora, configure o arquivo .env com as informações do seu banco de dados e certifique-se de criar uma tabela no banco antes disso!
 
 ```bash
 DB_CONNECTION=mysql
