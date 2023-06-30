@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'consumidores',
+        ],
+        'api_jwt' => [
+            'driver' => 'jwt',
+            'provider' => 'consumidores',
+        ],
     ],
 
     /*
@@ -64,11 +72,21 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'consumidores' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Consumidor::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+    ],
+
+    'eloquent' => [
+        'driver' => 'eloquent',
+        'identifier' => 'cpf',
+        'table' => 'consumidor',
     ],
 
     /*
