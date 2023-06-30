@@ -65,13 +65,6 @@ php artisan key:generate
 ```
 
 
-Execute o seguinte comando para configurar as tabelas do banco de dados:
-
-```bash
-php artisan migrate
-```
-
-
 Execute o seguinte comando para gerar a chave secreta usada para assinar os tokens JWT:
 
 ```bash
